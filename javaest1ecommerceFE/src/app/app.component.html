@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">Products</a>
+        <a class="navbar-brand" *ngIf="auth" [routerLink]="['create']">Create</a>
+        <a class="navbar-brand ml-auto" *ngIf="!auth" href="/login">Login</a>
+        <a class="navbar-brand ml-auto" *ngIf="auth" href="#" (click)="logout()">Logout</a>
+</nav>
+<div class=body>
+        <router-outlet></router-outlet>
+</div>
